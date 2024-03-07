@@ -4,7 +4,7 @@ const CONFIG = {
     name: "lawson-ng",
     image: "/avt.png", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
     role: "Fullstack developer",
-    bio: "I develop everything using node.",
+    bio: "",
     email: "abraham.lawson.dev@gmail.com",
     linkedin: "lawson-ng",
     github: "lawson-ng",
@@ -62,7 +62,7 @@ const CONFIG = {
     },
   },
   isProd: process.env.VERCEL_ENV === "production", // distinguish between development and production environment (ref: https://vercel.com/docs/environment-variables#system-environment-variables)
-  revalidateTime: 10 // revalidate time for [slug], index
+  revalidateTime: 10, // revalidate time for [slug], index
 }
 
 module.exports = { CONFIG }
