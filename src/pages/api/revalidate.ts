@@ -18,9 +18,9 @@ export default async function handler(
       await res.revalidate(path)
     } else {
       const posts = await getPosts()
-      const revalidateRequests = posts.map((row) =>
-        res.revalidate(`/${row.slug}`)
-      )
+      const revalidateRequests = posts.map((row) => {
+        return res.revalidate(`/${row.slug}`)
+      })
       await Promise.all(revalidateRequests)
     }
 

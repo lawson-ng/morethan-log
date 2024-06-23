@@ -4,7 +4,7 @@ import { idToUuid } from "notion-utils"
 
 import getAllPageIds from "src/libs/utils/notion/getAllPageIds"
 import getPageProperties from "src/libs/utils/notion/getPageProperties"
-import { TPosts } from "src/types"
+import { TPostStatus, TPosts } from "src/types"
 
 /**
  * @param {{ includePages: boolean }} - false: posts only / true: include pages
@@ -14,6 +14,7 @@ import { TPosts } from "src/types"
 export const getPosts = async () => {
   let id = CONFIG.notionConfig.pageId as string
   const api = new NotionAPI()
+  const listRevalidateStatus = ["Public", "PublicOnDetail"]
 
   const response = await api.getPage(id)
   id = idToUuid(id)
@@ -54,6 +55,12 @@ export const getPosts = async () => {
     })
 
     const posts = data as TPosts
-    return posts
+    return posts.filter(
+      (row) =>
+        row.status &&
+        row.status.some((status: TPostStatus) =>
+          listRevalidateStatus.includes(status)
+        )
+    )
   }
 }

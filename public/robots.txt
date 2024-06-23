@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://lawson-ng.vercel.app/
+
+# Sitemaps
+Sitemap: https://lawson-ng.vercel.app/sitemap.xml

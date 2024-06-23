@@ -3,7 +3,7 @@ const CONFIG = {
   profile: {
     name: "lawson-ng",
     image: "/avt.png", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
-    role: "Fullstack developer",
+    role: "Khó khăn sẽ tạo nên hoặc hủy hoại con người ta.",
     bio: "",
     email: "abraham.lawson.dev@gmail.com",
     linkedin: "lawson-ng",
@@ -24,7 +24,7 @@ const CONFIG = {
   },
 
   // CONFIG configration (required)
-  link: "https://www.lawson-ng.com/",
+  link: "https://lawson-ng.vercel.app/",
   since: 2022, // If leave this empty, current year will be used.
   lang: "en-US", // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES', 'ko-KR']
   ogImageGenerateURL: "https://og-image-korean.vercel.app", // The link to generate OG image, don't end with a slash
