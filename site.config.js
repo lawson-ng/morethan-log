@@ -20,6 +20,7 @@ const CONFIG = {
   blog: {
     title: "lawson ng",
     description: "welcome to lawson-ng!",
+    scheme: "dark", // 'light' | 'dark' | 'system'
   },
 
   // CONFIG configration (required)
