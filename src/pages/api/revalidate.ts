@@ -15,6 +15,7 @@ export default async function handler(
 
   try {
     if (path && typeof path === "string") {
+      console.log("🚀 ~ path:", path)
       await res.revalidate(path)
     } else {
       const posts = await getPosts()
