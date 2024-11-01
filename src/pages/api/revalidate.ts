@@ -13,19 +13,21 @@ export default async function handler(
     return res.status(401).json({ message: "Invalid token" })
   }
 
+  let posts: any[] = [];
   try {
     if (path && typeof path === "string") {
       console.log("🚀 ~ path:", path)
       await res.revalidate(path)
     } else {
-      const posts = await getPosts()
+      posts = await getPosts()
       const revalidateRequests = posts.map((row) => {
         return res.revalidate(`/${row.slug}`)
       })
       await Promise.all(revalidateRequests)
+      res.revalidate('/')
     }
 
-    res.json({ revalidated: true })
+    res.json({ revalidated: true, posts })
   } catch (err) {
     return res.status(500).send("Error revalidating")
   }
